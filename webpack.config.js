@@ -33,16 +33,17 @@ module.exports = {
   },
   devServer: {
     port: 3000,
-    open: true,
+    host: '0.0.0.0',
+    open: false,
     proxy: {
-      '/api': 'http://localhost:8080'
+      '/api': 'http://192.168.1.4:8080'
     }
   },
   plugins: [
     new CleanWebpackPlugin([outputDirectory]),
     new HtmlWebpackPlugin({
       template: './public/index.html',
-      favicon: './public/favicon.ico'
+      favicon: '../favicon.ico'
     })
   ]
 };

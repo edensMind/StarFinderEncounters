@@ -18,3 +18,4 @@ app.post('/api/createEncounter', mongoDb.createEncounter, function(req,res){});
 
 // Server listen
 app.listen(process.env.PORT || 8080, () => console.log(`Listening on port ${process.env.PORT || 8080}!`));
+//aap.listen(8080, '192.168.1.4');

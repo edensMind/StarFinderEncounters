@@ -15,6 +15,7 @@ const styles = theme => ({
   },
 });
 
+// Main App
 class App extends React.Component {
   render() {
     const { classes } = this.props;
