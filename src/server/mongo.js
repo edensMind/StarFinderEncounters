@@ -12,7 +12,7 @@ var mongoConfig = {
   spellsColl: 'spells',
 };
 
-// Create Mongo Connection
+// Create Mongo Connection 
 const MongoClient = mongo.MongoClient;
 MongoClient.connect(
     mongoConfig.url, 
