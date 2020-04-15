@@ -16,6 +16,9 @@ const useStyles = makeStyles((theme) => ({
   fontColor: {
     color: '#ccc',
   },
+  bgColor: {
+    color: '#666666',
+  },
   label: {
     color: 'green',
     focused: {
@@ -63,7 +66,7 @@ export default function EncounterSelect(props) {
 
   return (
     <div>
-      <FormControl className={`${classes.formControl}`}>
+      <FormControl className={`${classes.formControl} encounter-select`}>
 
           <InputLabel 
             className={`${classes.root} encounter-select-label`}
@@ -80,7 +83,7 @@ export default function EncounterSelect(props) {
           onChange={handleChange}
         >
         {encounters.map((row) => (
-          <MenuItem value={row._id} key={row._id}>{row.name}</MenuItem>
+          <MenuItem className={`${classes.fontColor}`} value={row._id} key={row._id}>{row.name}</MenuItem>
         ))}
         </Select>
         {/* <FormHelperText className={`${classes.fontColor}`}>Select an Encounter</FormHelperText> */}

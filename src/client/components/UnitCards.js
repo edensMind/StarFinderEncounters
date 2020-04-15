@@ -6,47 +6,86 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
+// import '../../../public/css/styles.css';
 
 // Card Styles
 const useStyles = makeStyles({
-    root: {
-        minWidth: 275,
-      },
-      title: {
-        fontSize: 14,
-      },
-      pos: {
-        marginBottom: 12,
-      },
+    rootGrid: {
+        flexGrow: 1,
+    },
+    rootCard: {
+        border: "1px solid rgba(0, 0, 0, 0.65)",
+    },
+    fontColor: {
+        color: '#ccc',
+    },
+    cardContent: {
+        backgroundColor: "#555",
+    },
   });
 
 // Encounter Unit Card
 function UnitCard(props) {
     const classes = useStyles();
-
+    
+    const unit = props.unit;
 
     return(
-        <Card className={classes.title} variant="outlined">
-        <CardContent>
-          <Typography classes={{ root: 'my-class-name' }} color="textSecondary" gutterBottom>
-          {props.unit.name}
-          </Typography>
-          <Typography variant="h5" component="h2">
+    <Card variant="outlined" className={`${classes.rootCard}`}>
+        <CardContent className={`${classes.cardContent} ${classes.fontColor}`}>
+            <Typography className={`${classes.unitName}`} variant="h5">
+                {unit.name}
+            </Typography >
+            <Grid container className={classes.rootGrid} spacing={5}>
+                <Grid item xs>
+                    <div>
+                        <p>Type: {`${unit.subType} ${unit.type}`}</p>
+                        <p>Challenge Rating: {unit.challengeRating}</p>
+                        <p>Size: {unit.size}</p>
+                    </div>
+                </Grid>
+                <Grid item xs>
+                    <div>
+                        <p>Energy AC: {unit.energyArmorClass}</p>
+                        <p>Kinetic AC: {unit.kineticArmorClass}</p>
+                    </div>
+                </Grid>
+                <Grid item xs>
+                    <div>
+                    str: {unit.abilityScores.str}<br/>
+                    dex: {unit.abilityScores.dex}<br/>
+                    con: {unit.abilityScores.con}<br/>
+                    int: {unit.abilityScores.int}<br/>
+                    wis: {unit.abilityScores.wis}<br/>
+                    cha: {unit.abilityScores.cha}
+                    </div>
+                </Grid>
+                <Grid item xs>
+                    <div>
+                        <p>Energy AC: {unit.energyArmorClass}</p>
+                        <p>Kinetic AC: {unit.kineticArmorClass}</p>
+                    </div>
+                </Grid>
+                <Grid item xs>
+                    <div>
+                        <p>Type: {`${unit.subType} ${unit.type}`}</p>
+                        <p>Challenge Rating: {unit.challengeRating}</p>
+                        <p>Size: {unit.size}</p>
+                    </div>
+                </Grid>
+                <Grid item xs>
+                    <div>
+                        <p>Type: {`${unit.subType} ${unit.type}`}</p>
+                        <p>Challenge Rating: {unit.challengeRating}</p>
+                        <p>Size: {unit.size}</p>
+                    </div>
+                </Grid>
 
-          </Typography>
-          <Typography classes={{ root: 'my-class-name' }} color="textSecondary">
-            adjective
-          </Typography>
-          <Typography variant="body2" component="p">
-            well meaning and kindly.
-            <br />
-            {'"a benevolent smile"'}
-          </Typography>
+            </Grid>
+
         </CardContent>
-        <CardActions>
-          <Button size="small">Learn More</Button>
-        </CardActions>
-      </Card>
+    </Card>
     );
 }
 
