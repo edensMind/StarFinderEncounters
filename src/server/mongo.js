@@ -1,10 +1,11 @@
 const mongo = require('mongodb');
 var ObjectId = require('mongodb').ObjectId;
+const config = require('../../config');
 
 // Mongo Server Settings
 var mongoConfig = {
   db: null,
-  url: 'mongodb://192.168.1.4:27017/',
+  url: `mongodb://${config.mongo.host}:${config.mongo.port}/`,
   dbName: 'starfinder',
   encountersColl: 'encounters',
   unitsColl: 'units',

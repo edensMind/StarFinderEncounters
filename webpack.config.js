@@ -1,4 +1,5 @@
 const path = require('path');
+const config = require('./config');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
@@ -32,11 +33,11 @@ module.exports = {
     extensions: ['*', '.js', '.jsx']
   },
   devServer: {
-    port: 3000,
-    host: '0.0.0.0',
+    port: config.client.port,
+    host: config.client.host,
     open: false,
     proxy: {
-      '/api': 'http://192.168.1.4:8080'
+      '/api': `http://${config.server.host}:${config.server.port}`
     }
   },
   plugins: [
