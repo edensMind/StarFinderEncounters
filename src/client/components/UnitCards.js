@@ -63,48 +63,50 @@ function UnitCard(props) {
                         wis: {unit.abilityScores.wis}<br/>
                         cha: {unit.abilityScores.cha} */}
                         <table>
-                            <tr>
-                                <th>ABI</th>
-                                <th>SCR</th>
-                                <th>MOD</th>
-                            </tr>
-                            <tr>
-                                <th>STR</th>
-                                <td>{unit.abilityScores.str}</td>
-                                <td>+{getAbilityScoreModifier(unit.abilityScores.str)}</td>
-                            </tr>
-                            <tr>
-                                <th>DEX</th>
-                                <td>{unit.abilityScores.dex}</td>
-                                <td>+{getAbilityScoreModifier(unit.abilityScores.dex)}</td>
-                            </tr>
-                            <tr>
-                                <th>CON</th>
-                                <td>{unit.abilityScores.con}</td>
-                                <td>+{getAbilityScoreModifier(unit.abilityScores.con)}</td>
-                            </tr>
-                            <tr>
-                                <th>INT</th>
-                                <td>{unit.abilityScores.int}</td>
-                                <td>+{getAbilityScoreModifier(unit.abilityScores.int)}</td>
-                            </tr>
-                            <tr>
-                                <th>WIS</th>
-                                <td>{unit.abilityScores.wis}</td>
-                                <td>+{getAbilityScoreModifier(unit.abilityScores.wis)}</td>
-                            </tr>
-                            <tr>
-                                <th>CHA</th>
-                                <td>{unit.abilityScores.cha}</td>
-                                <td>+{getAbilityScoreModifier(unit.abilityScores.cha)}</td>
-                            </tr>
+                            <tbody>
+                                <tr>
+                                    <th>ABI</th>
+                                    <th>SCR</th>
+                                    <th>MOD</th>
+                                </tr>
+                                <tr>
+                                    <th>STR</th>
+                                    <td>{unit.abilityScores.str}</td>
+                                    <td>+{getAbilityScoreModifier(unit.abilityScores.str)}</td>
+                                </tr>
+                                <tr>
+                                    <th>DEX</th>
+                                    <td>{unit.abilityScores.dex}</td>
+                                    <td>+{getAbilityScoreModifier(unit.abilityScores.dex)}</td>
+                                </tr>
+                                <tr>
+                                    <th>CON</th>
+                                    <td>{unit.abilityScores.con}</td>
+                                    <td>+{getAbilityScoreModifier(unit.abilityScores.con)}</td>
+                                </tr>
+                                <tr>
+                                    <th>INT</th>
+                                    <td>{unit.abilityScores.int}</td>
+                                    <td>+{getAbilityScoreModifier(unit.abilityScores.int)}</td>
+                                </tr>
+                                <tr>
+                                    <th>WIS</th>
+                                    <td>{unit.abilityScores.wis}</td>
+                                    <td>+{getAbilityScoreModifier(unit.abilityScores.wis)}</td>
+                                </tr>
+                                <tr>
+                                    <th>CHA</th>
+                                    <td>{unit.abilityScores.cha}</td>
+                                    <td>+{getAbilityScoreModifier(unit.abilityScores.cha)}</td>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
                 </Grid>
                 <Grid item xs={3}>
                     <div>
                         {unit.weapons.map((weapon) => (
-                        <div>
+                        <div key={`weapon.name`}>
                             {weapon.name}<br/>
                             <span>{weapon.damage} {weapon.type} damage</span><br/>
                             <span>Bonus: +{weapon.attackBonus} Range: {weapon.range} Critical: {weapon.critical}x</span>
@@ -116,7 +118,7 @@ function UnitCard(props) {
                     <div>
                         Spell Uses {unit.spellUses}
                         {unit.spells.map((spell) => (
-                        <div>
+                        <div key={`weapon.name`}>
                             <span>{spell.name} lvl {spell.level}</span><br/>
                             <span>{spell.description}</span>
                         </div>

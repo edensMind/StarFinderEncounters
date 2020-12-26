@@ -11,6 +11,7 @@ var mongoConfig = {
   unitsColl: 'units',
   weaponsColl: 'weapons',
   spellsColl: 'spells',
+  abilitiesColl: 'abilities',
 };
 
 // Create Mongo Connection 

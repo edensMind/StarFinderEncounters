@@ -19,5 +19,5 @@ app.get('/api/getEncounter/:id', mongoDb.getEncounter, function(req,res){});
 app.post('/api/createEncounter', mongoDb.createEncounter, function(req,res){});
 
 // Server listen
-app.listen(process.env.PORT || config.server.port, () => console.log(`Listening on port ${process.env.PORT || config.server.por}!`));
+app.listen(process.env.PORT || config.server.port, () => console.log(`Listening on port ${process.env.PORT || config.server.port}!`));
 //aap.listen(8080, '192.168.1.4');
